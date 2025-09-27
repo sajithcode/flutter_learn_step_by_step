@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fyhbfsd/styled_body_text.dart';
+import 'package:fyhbfsd/styled_button_widget.dart';
 
 class Coffeepref extends StatefulWidget {
   const Coffeepref({super.key});
@@ -33,7 +35,7 @@ class _CoffeeprefState extends State<Coffeepref> {
         Row(
           children: [
             const Icon(Icons.local_cafe),
-            const Text("Strength: "),
+            const StyledBodyText("Strength: "),
             // Text("$strength"),
 
             for (var i = 0; i < strength; i++)
@@ -45,22 +47,20 @@ class _CoffeeprefState extends State<Coffeepref> {
               ),
 
             const Expanded(child: SizedBox()),
-            FilledButton(
-                style: FilledButton.styleFrom(
-                    backgroundColor: Colors.brown,
-                    foregroundColor: Colors.white),
-                onPressed: incrementStrength,
-                child: const Text("+")),
+            StyledButtonWidget(
+              onPressed: incrementStrength,
+              child: const Text("+"),
+            )
           ],
         ),
         Row(
           children: [
             const Icon(Icons.arrow_right),
-            const Text("Sugar: "),
+            const StyledBodyText("Sugar: "),
             // Text("$sugar"),
 
             if (sugar == 0)
-              const Text("No sugar"),
+              const StyledBodyText("No sugar"),
 
             for (var i = 0; i < sugar; i++)
             Image.asset(
@@ -71,12 +71,10 @@ class _CoffeeprefState extends State<Coffeepref> {
             ),
 
             const Expanded(child: SizedBox()),
-            FilledButton(
-                style: FilledButton.styleFrom(
-                    backgroundColor: Colors.brown,
-                    foregroundColor: Colors.white),
-                onPressed: incrementSugar,
-                child: const Text("+")),
+            StyledButtonWidget(
+              onPressed: incrementSugar,
+              child: const Text("+"),
+            ),
           ],
         ),
       ],
